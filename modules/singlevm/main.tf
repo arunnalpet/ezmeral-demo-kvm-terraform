@@ -17,7 +17,7 @@
 resource "libvirt_volume" "base-os-qcow2" {
   name   = "${var.vmname}-os-img.qcow2"
   pool   = "default"
-  source = "/root/vmm-kvm-terraform/images/${var.osimage}"
+  source = "/root/ezmeral-demo-kvm-terraform/images/${var.osimage}"
   format = "qcow2"
 }
 
