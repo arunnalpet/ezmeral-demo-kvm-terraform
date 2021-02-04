@@ -23,4 +23,6 @@ Terraform v0.14.2
 ```
 
 # Steps
-Make sure ```no_proxy``` is properly hardcoded in ```conf/cloud_init.cfg```
+- Make sure ```no_proxy``` is properly hardcoded in ```conf/cloud_init.cfg```
+- Make sure the path is properly set in  ```/modules/singlevm/main.tf```, for cloud-image and cloud-config directories.
+- Make sure you have provided proper bridge interface in ```/modules/singlevm/main.tf```

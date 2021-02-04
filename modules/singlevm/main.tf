@@ -49,7 +49,7 @@ resource "libvirt_volume" "pers-vol" {
 
 # Configure cloud-init
 data "template_file" "user_data" {
-  template = file("/root/vmm-kvm-terraform/conf/cloud_init.cfg")
+  template = file("/root/ezmeral-demo-kvm-terraform/conf/cloud_init.cfg")
   vars = {
     hname = var.vmname
     vmhostdom = var.vmhostdom
@@ -57,7 +57,7 @@ data "template_file" "user_data" {
 }
 
 data "template_file" "network_data" {
-  template = file("/root/vmm-kvm-terraform/conf/network.cfg")
+  template = file("/root/ezmeral-demo-kvm-terraform/conf/network.cfg")
   vars = {
     vmnw     = var.vmnw
     vmgw     = var.vmgw
@@ -77,7 +77,7 @@ resource "libvirt_cloudinit_disk" "commoninit" {
 # Create Domain
 resource "libvirt_domain" "myvm" {
   name   = var.vmname
-  memory = var.memory
+  memory = var.memory * 1024
   vcpu   = var.vcpu
 
   network_interface {

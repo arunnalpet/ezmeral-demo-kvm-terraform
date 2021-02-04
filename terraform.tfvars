@@ -28,8 +28,8 @@ myvms = {
     osdisk_gb   = 500
     ephdisk_gb  = 500
     persdisk_gb = 500
-    CPU_Count   = 4
-    RAM         = 256
+    CPU_Count   = 8
+    RAM         = 512
     Image       = "CentOS-7-x86_64-GenericCloud.qcow2"
     nwip        = "10.3.20.51/24"
   }

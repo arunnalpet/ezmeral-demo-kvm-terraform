@@ -4,7 +4,7 @@ echo "proxy=http://web-proxy.corp.hpecorp.net:8080" >> /etc/yum.conf
 # Export proxy
 export http_proxy=http://web-proxy.corp.hpecorp.net:8080
 export https_proxy=http://web-proxy.corp.hpecorp.net:8080
-export no_proxy=localhost,127.0.0.1,10.3.1.*
+export no_proxy=localhost,127.0.0.1,10.3.20.*
 
 # install packages
 yum install -y wget git libvirt qemu-kvm virt-manager unzip vim
@@ -28,16 +28,18 @@ systemctl enable libvirtd
 systemctl start libvirtd
 
 # Clone the repo
-git clone  https://github.com/arunnalpet/vmm-kvm-terraform.git
+git clone  https://github.com/arunnalpet/ezmeral-demo-kvm-terraform.git
 
 # Download terraform
 https://releases.hashicorp.com/terraform/0.14.2/terraform_0.14.2_linux_amd64.zip
 # mv it
+mv terraform /usr/local/bin/
 
 # Download libvirt plugin
-mkdir -p ~/.terraform.d/plugins
+wget https://github.com/dmacvicar/terraform-provider-libvirt/releases/download/v0.6.2/terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
+mkdir -p /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/
 # mv plugin here
-/root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/terraform-provider-libvirt
+mv terraform-provider-libvirt /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/
 
 #follow github steps
 
@@ -51,6 +53,7 @@ mkdir -p ~/.terraform.d/plugins
 
 # mkfs.ext4 /dev/sdc1
 mount /dev/sdc1 /var/lib/libvirt/images
+# TODO
 # add mount point to /etc/fstab
 
 # Create bridge interface
@@ -78,13 +81,10 @@ DNS2="10.3.20.3"
 DOMAIN="v0020.sau01.presales.hpecorp.net"
 NM_CONTROLLED="no"
 
-
-
-# Create bridged network in virt-manager
-
+# TODO
 #setup passwordless ssh
 
 # Allow VM's traffic to go outside the bridge networking
-sudo sysctl -w net.bridge.bridge-nf-call-arptables=0
-sudo sysctl -w net.bridge.bridge-nf-call-ip6tables=0
-sudo sysctl -w net.bridge.bridge-nf-call-iptables=0
+sysctl -w net.bridge.bridge-nf-call-arptables=0
+sysctl -w net.bridge.bridge-nf-call-ip6tables=0
+sysctl -w net.bridge.bridge-nf-call-iptables=0
