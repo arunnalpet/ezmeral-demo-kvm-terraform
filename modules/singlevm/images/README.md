@@ -1,0 +1,1 @@
+### Lookup scripts directory for downloading images
