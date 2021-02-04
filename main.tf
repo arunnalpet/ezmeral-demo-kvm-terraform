@@ -21,6 +21,7 @@ module "kvm_instances" {
   vmdns1       = var.nwdns1
   vmdns2       = var.nwdns2
   vmdnsdom     = var.nwdnsdom
+  vmhostdom    = var.nwhostdom
 }
 
 output "all_ips" {

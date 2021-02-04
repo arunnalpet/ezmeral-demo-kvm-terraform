@@ -33,3 +33,7 @@ variable "nwdns2" {
 variable "nwdnsdom" {
   type = string
 }
+
+variable "nwhostdom"{
+  type = string
+}

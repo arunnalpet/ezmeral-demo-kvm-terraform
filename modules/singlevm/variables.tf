@@ -48,3 +48,7 @@ variable "vmdns2" {
 variable "vmdnsdom" {
   type = string
 }
+
+variable "vmhostdom"{
+  type = string
+}

@@ -52,6 +52,7 @@ data "template_file" "user_data" {
   template = file("/root/vmm-kvm-terraform/conf/cloud_init.cfg")
   vars = {
     hname = var.vmname
+    vmhostdom = var.vmhostdom
   }
 }
 

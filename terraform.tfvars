@@ -17,9 +17,10 @@
 
 # Common Variables
 nwgw     = "10.3.20.1"
-nwdns1   = "10.3.20.2"
-nwdns2   = "10.3.20.3"
+nwdns1   = "10.3.20.11"
+nwdns2   = "10.3.20.2"
 nwdnsdom = "v0020.sau01.presales.hpecorp.net"
+nwhostdom = "gse.com"
 
 myvms = {
   vm1 = {
