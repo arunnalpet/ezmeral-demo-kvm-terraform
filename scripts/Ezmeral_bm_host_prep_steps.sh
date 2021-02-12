@@ -19,6 +19,7 @@ systemctl disable firewalld
 
 # Disable selinux
 setenforce 0
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 #MANUAL
 # vi /etc/selinux/config
@@ -31,14 +32,16 @@ systemctl start libvirtd
 git clone  https://github.com/arunnalpet/ezmeral-demo-kvm-terraform.git
 
 # Download terraform
-https://releases.hashicorp.com/terraform/0.14.2/terraform_0.14.2_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.14.2/terraform_0.14.2_linux_amd64.zip
 # mv it
+unzip terraform_0.14.2_linux_amd64.zip
 mv terraform /usr/local/bin/
 
 # Download libvirt plugin
 wget https://github.com/dmacvicar/terraform-provider-libvirt/releases/download/v0.6.2/terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
 mkdir -p /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/
 # mv plugin here
+tar -zxvf terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
 mv terraform-provider-libvirt /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/
 
 #follow github steps
