@@ -24,22 +24,22 @@ nwhostdom = "gse.com"
 
 myvms = {
   vm1 = {
-    hostname    = "controller"
+    hostname    = "controller-ecp"
     osdisk_gb   = 500
     ephdisk_gb  = 500
     persdisk_gb = 500
     CPU_Count   = 8
-    RAM         = 512
+    RAM         = 128
     Image       = "CentOS-7-x86_64-GenericCloud.qcow2"
     nwip        = "10.3.20.51/24"
   }
   vm2 = {
-    hostname    = "gateway"
+    hostname    = "gateway-ecp"
     osdisk_gb   = 500
     ephdisk_gb  = 1
     persdisk_gb = 1
     CPU_Count   = 8
-    RAM         = 512
+    RAM         = 96
     Image       = "CentOS-7-x86_64-GenericCloud.qcow2"
     nwip        = "10.3.20.52/24"
   }

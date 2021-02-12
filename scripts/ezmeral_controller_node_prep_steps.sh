@@ -1,7 +1,5 @@
 # Meant to run only one time.
 # If script fails, run commands manually
-# Manually set: 
-# hostnames of all other hosts.
 
 # Install necessary packages
 yum-config-manager --disable updates
@@ -17,3 +15,12 @@ setenforce 0
 # Assuming disks are /dev/vdb and /dev/vdc
 (echo g; echo w) | fdisk /dev/vdb
 (echo g; echo w) | fdisk /dev/vdc
+
+# Run pre-check and generate config file
+wget https://hpe-ecp-releases.s3.amazonaws.com/5.2/hpe-cp-prechecks-rhel-5.2.bin
+chmod +x ./hpe-cp-prechecks-rhel-5.2.bin
+./hpe-cp-prechecks-rhel-5.2.bin --proxy http://web-proxy.corp.hpecorp.net:8080
+
+# Run ezmeral installer
+./hpe-cp-rhel-release-5.2-3020.bin --prechecks-config-file /tmp/bd_prechecks.conf --default-password admin123
+
