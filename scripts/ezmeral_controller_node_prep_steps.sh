@@ -22,5 +22,7 @@ chmod +x ./hpe-cp-prechecks-rhel-5.2.bin
 ./hpe-cp-prechecks-rhel-5.2.bin --proxy http://web-proxy.corp.hpecorp.net:8080
 
 # Run ezmeral installer
+# TODO: CLI to accept EULA
+chmod +x ./hpe-cp-rhel-release-5.2-3020.bin
 ./hpe-cp-rhel-release-5.2-3020.bin --prechecks-config-file /tmp/bd_prechecks.conf --default-password admin123
 
