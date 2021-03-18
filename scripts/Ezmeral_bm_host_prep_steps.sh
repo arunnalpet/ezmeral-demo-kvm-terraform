@@ -1,3 +1,4 @@
+# Tested on CentOS Linux release 7.9.2009 (Core)
 # configure proxy for yum in /etc/yum.conf
 echo "proxy=http://web-proxy.corp.hpecorp.net:8080" >> /etc/yum.conf
 
@@ -44,6 +45,8 @@ mkdir -p /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/li
 tar -zxvf terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
 mv terraform-provider-libvirt /root/.local/share/terraform/plugins/registry.terraform.io/dmacvicar/libvirt/0.6.2/linux_amd64/
 
+# Download cloud images
+
 #follow github steps
 
 
@@ -84,10 +87,15 @@ DNS2="10.3.20.3"
 DOMAIN="v0020.sau01.presales.hpecorp.net"
 NM_CONTROLLED="no"
 
+# systemctl restart network
+
+# TODO: Create 'default' storage pool.
+
 # TODO
 #setup passwordless ssh
 
 # Allow VM's traffic to go outside the bridge networking
+# After spinning up initial VMs
 sysctl -w net.bridge.bridge-nf-call-arptables=0
 sysctl -w net.bridge.bridge-nf-call-ip6tables=0
 sysctl -w net.bridge.bridge-nf-call-iptables=0
