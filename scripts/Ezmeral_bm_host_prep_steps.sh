@@ -96,6 +96,7 @@ NM_CONTROLLED="no"
 
 # Allow VM's traffic to go outside the bridge networking
 # After spinning up initial VMs
+# modprobe br_netfilter
 sysctl -w net.bridge.bridge-nf-call-arptables=0
 sysctl -w net.bridge.bridge-nf-call-ip6tables=0
 sysctl -w net.bridge.bridge-nf-call-iptables=0
