@@ -28,4 +28,4 @@ Terraform v0.14.2
 - Make sure the path is properly set in  ```/modules/singlevm/main.tf```, for cloud-image and cloud-config directories.
 - Make sure you have provided proper bridge interface in ```/modules/singlevm/main.tf```
 - For each VM, host entries has to be added manually at the moment. Fill in ```scripts/host_entries.sh``` accordingly
-- Password to login to vm is configured in conf/cloud_init.cfg. Default is root/ezmeral
+- Password to login to vm is configured in ```conf/cloud_init.cfg```. Default is root/ezmeral
