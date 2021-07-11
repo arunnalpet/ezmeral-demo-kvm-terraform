@@ -62,7 +62,8 @@ mount /dev/sdc1 /var/lib/libvirt/images
 # TODO
 # add mount point to /etc/fstab
 
-# Create bridge interface
+# Modify network scripts under /etc/sysconfig/network-scripts
+# Default Interface (ifcfg-ens3f0)
 TYPE="Ethernet"
 BOOTPROTO="none"
 NAME="ens3f0"
@@ -71,6 +72,8 @@ ONBOOT="yes"
 BRIDGE="databr"
 NM_CONTROLLED="no"
 
+# Bridge Interface (ifcfg-databr)
+# Create this file. This will automatically create a bridge interface.
 TYPE="Bridge"
 PROXY_METHOD="none"
 BROWSER_ONLY="no"
