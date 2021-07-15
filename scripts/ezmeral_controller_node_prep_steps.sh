@@ -17,11 +17,13 @@ setenforce 0
 (echo g; echo w) | fdisk /dev/vdc
 
 # Run pre-check and generate config file
-wget https://hpe-ecp-releases.s3.amazonaws.com/5.2/hpe-cp-prechecks-rhel-5.2.bin
-chmod +x ./hpe-cp-prechecks-rhel-5.2.bin
-./hpe-cp-prechecks-rhel-5.2.bin --proxy http://web-proxy.corp.hpecorp.net:8080
+wget https://bdk8s.s3.us-east-2.amazonaws.com/5.3/3031/hpe-cp-rhel-prechecks-5.3.bin
+chmod +x ./hpe-cp-rhel-prechecks-5.3.bin
+./hpe-cp-rhel-prechecks-5.3.bin --proxy http://web-proxy.corp.hpecorp.net:8080
 
 # Run ezmeral installer
+# Download Link
+
 # TODO: CLI to accept EULA
 chmod +x ./hpe-cp-rhel-release-5.2-3020.bin
 ./hpe-cp-rhel-release-5.2-3020.bin --prechecks-config-file /tmp/bd_prechecks.conf --default-password admin123
