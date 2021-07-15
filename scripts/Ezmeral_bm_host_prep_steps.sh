@@ -59,8 +59,10 @@ mv terraform-provider-libvirt /root/.local/share/terraform/plugins/registry.terr
 
 # mkfs.ext4 /dev/sdc1
 mount /dev/sdc1 /var/lib/libvirt/images
-# TODO
-# add mount point to /etc/fstab
+# TODO: add mount point to /etc/fstab
+# /dev/sdb /var/lib/libvirt/images                   xfs     defaults        0 0
+echo "/dev/sdb     /var/lib/libvirt/images           xfs     defaults        0 0" >> /etc/fstab
+
 
 # Modify network scripts under /etc/sysconfig/network-scripts
 # Default Interface (ifcfg-ens3f0)
