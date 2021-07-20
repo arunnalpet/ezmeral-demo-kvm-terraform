@@ -1,7 +1,10 @@
 # Meant to run only one time.
 # If script fails, run commands manually
-# Manually set: 
-# hostnames of all other hosts.
+
+# Manually set hostnames of all other hosts.
+# hostnamectl set-hostname ezcontroller.v0020.gselr5
+# Or
+# Configure hostnames in the DNS server
 
 # Check Timezone uniform
 # TODO: move this to cloud-config
