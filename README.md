@@ -23,6 +23,8 @@ Terraform v0.14.2
 ```
 
 # Steps
+- Copy ```terraform```  ```terraform-provider-libvirt``` to ```/usr/loca/bin/```
+- Clone this git repo under root: ```/root/ezmeral-demo-kvm-terraform/```
 - Update VM details in ```terraform.tfvars```
 - Make sure ```no_proxy``` is properly hardcoded in ```conf/cloud_init.cfg```
 - Make sure the path is properly set in  ```/modules/singlevm/main.tf```, for cloud-image and cloud-config directories.
