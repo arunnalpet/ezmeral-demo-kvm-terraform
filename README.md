@@ -23,11 +23,12 @@ Terraform v0.14.2
 ```
 
 # Steps
-- Copy ```terraform```  ```terraform-provider-libvirt``` to ```/usr/loca/bin/```
+- Copy ```terraform``` to ```/usr/loca/bin/```
+- Copy ```terraform-provider-libvirt``` to above mentioned plugin path.
 - Clone this git repo under root: ```/root/ezmeral-demo-kvm-terraform/```
 - Update VM details in ```terraform.tfvars```
 - Make sure ```no_proxy``` is properly hardcoded in ```conf/cloud_init.cfg```
 - Make sure the path is properly set in  ```/modules/singlevm/main.tf```, for cloud-image and cloud-config directories.
 - Make sure you have provided proper bridge interface in ```/modules/singlevm/main.tf```
-- For each VM, host entries has to be added manually at the moment. Fill in ```scripts/host_entries.sh``` accordingly
-- Password to login to vm is configured in ```conf/cloud_init.cfg```. Default is root/ezmeral
+- For each VM, host entries has to be added manually at the moment. Fill in ```scripts/host_entries.sh``` accordingly.
+- Password to login to vm is configured in ```conf/cloud_init.cfg```. Default is root/ezmeral.
