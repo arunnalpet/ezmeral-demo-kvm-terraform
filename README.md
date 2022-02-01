@@ -23,9 +23,7 @@ Terraform v0.14.2
 ```
 
 # Steps
-- Copy ```terraform``` to ```/usr/loca/bin/```
-- Copy ```terraform-provider-libvirt``` to above mentioned plugin path.
-- Clone this git repo under root: ```/root/ezmeral-demo-kvm-terraform/```
+- Follow the steps under ```scripts/Ezmeral_bm_host_prep_steps.sh``` to prepare baremetal host
 - Update VM details in ```terraform.tfvars```
 - Make sure ```no_proxy``` is properly hardcoded in ```conf/cloud_init.cfg```
 - Make sure the path is properly set in  ```/modules/singlevm/main.tf```, for cloud-image and cloud-config directories.
