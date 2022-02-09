@@ -1,6 +1,9 @@
 # Meant to run only one time.
 # If script fails, run commands manually
 
+# Enable extras repository if its RHEL
+subscription-manager repos --enable rhel-7-server-extras-rpms
+
 # Install necessary packages
 yum-config-manager --disable updates
 yum install -y wget vim python
