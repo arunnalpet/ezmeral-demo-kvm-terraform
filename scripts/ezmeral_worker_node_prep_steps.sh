@@ -1,6 +1,9 @@
 # Meant to run only one time.
 # If script fails, run commands manually
 
+# Enable extras repository if its RHEL
+subscription-manager repos --enable rhel-7-server-extras-rpms
+
 # Manually set hostnames of all other hosts.
 # hostnamectl set-hostname ezcontroller.v0020.gselr5
 # Or
